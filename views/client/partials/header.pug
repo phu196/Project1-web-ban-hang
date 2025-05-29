@@ -1,0 +1,26 @@
+header.header.bg-light.py-3.border-bottom.shadow-sm.position-relative
+  .container
+    .row.align-items-center
+      .col-3
+        .inner-logo
+          a(href="/")
+            img(src="/images/image.png", alt="Image description", class="custom-image img-fluid")
+
+      .col-6
+        .inner-menu
+          ul.nav.justify-content-center
+            li.nav-item
+              a.nav-link.text-dark(href="/") Trang chủ
+            li.nav-item
+              a.nav-link.text-dark(href="/products") Sản phẩm
+            li.nav-item
+              a.nav-link.text-dark(href="/cart") Giỏ hàng (#{miniCart})
+
+  .user-actions.position-absolute.top-0.end-0.d-flex.justify-content-end.align-items-center.p-3
+    if(user)
+      .btn-group
+        a.btn.btn-info.btn-sm.me-2(href="/user/profile") #{user.fullName}
+        a.btn.btn-danger.btn-sm(href="/user/logout") Đăng xuất
+    else
+      a.btn.btn-info.btn-sm.me-2(href="/user/login") Đăng nhập
+      a.btn.btn-success.btn-sm(href="/user/register") Đăng ký

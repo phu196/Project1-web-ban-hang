@@ -1,0 +1,26 @@
+extends ../../layouts/default.pug
+include ../../mixins/box-head.pug
+
+block main
+  .container.my-5
+    .row.mb-4
+      .col-12.text-center
+        +box-head("Danh sách sản phẩm")
+
+    .row.g-4
+      each item in products
+        .col-12.col-sm-6.col-md-4
+          .product-item.card.shadow-sm.border-0.rounded-3.transition
+            .inner-image.position-relative.overflow-hidden.rounded-top
+              a(href=`/products/${item.slug}`)
+                img(src=item.thumbnail, alt=item.title, class="img-fluid w-100")
+                .discount-badge.position-absolute.top-0.end-0.bg-danger.text-white.px-2.py-1.rounded-start
+                  | -#{item.discountPercentage}%
+            .inner-content.p-3.text-center
+              h3.inner-title.fs-5.text-truncate.mb-2
+                a(href=`/products/${item.slug}`, class="text-decoration-none text-dark fw-bold") #{item.title}
+              .inner-price.mb-1
+                span.inner-price-new.text-success.fw-bold.me-2 #{item.priceNew}$
+                if item.price
+                  span.inner-price-old.text-muted.text-decoration-line-through #{item.price}$
+              a.btn.btn-primary.btn-sm.mt-2(href=`/products/${item.slug}`) Xem chi tiết
