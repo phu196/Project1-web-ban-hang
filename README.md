@@ -35,7 +35,8 @@ MONGO_URL=mongodb://127.0.0.1:27017/product-management
 
 # Seed tài khoản admin
 node scripts/seedAdmin.js
-# Kết quả trên terminal: ✅ Tạo tài khoản admin thành công!
+# Kết quả trên terminal: 
+✅ Tạo tài khoản admin thành công!
 
 # Chạy ứng dụng
 npm start
