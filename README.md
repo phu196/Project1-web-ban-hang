@@ -1,4 +1,4 @@
-Hệ thống web bán hàng đơn giản
+**Hệ thống web bán hàng đơn giản**
 Đây là một dự án web bán hàng mô phỏng, được xây dựng bằng Node.js, Express, MongoDB và Pug, hỗ trợ các tính năng quản lý sản phẩm, người dùng và giỏ hàng.
 
 🚀 Tính năng chính
