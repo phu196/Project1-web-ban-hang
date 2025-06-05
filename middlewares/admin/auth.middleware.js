@@ -3,7 +3,7 @@ const Account = require("../../models/account.model");
 const Role = require("../../models/role.model");
 
 module.exports.requireAuth = async (req, res, next) => {
-  if(!req.cookies.token) {
+  if (!req.cookies.token) {
     res.redirect(`${systemConfig.prefixAdmin}/auth/login`);
     return;
   }
@@ -14,7 +14,7 @@ module.exports.requireAuth = async (req, res, next) => {
     status: "active"
   });
 
-  if(!user) {
+  if (!user) {
     res.clearCookie("token");
     res.redirect(`${systemConfig.prefixAdmin}/auth/login`);
     return;
